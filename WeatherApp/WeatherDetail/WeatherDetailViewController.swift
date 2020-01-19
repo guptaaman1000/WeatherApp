@@ -12,7 +12,9 @@ import RxSwift
 import RxCocoa
 
 class WeatherDetailViewController: UIViewController {
-        
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     var viewPresenter: WeatherDetailViewPresenter!
     private let bag = DisposeBag()
     
@@ -25,6 +27,8 @@ class WeatherDetailViewController: UIViewController {
     
     private func setupUI() {
         self.title = viewPresenter.city
+        viewPresenter.showLoader.bind(to: activityIndicator.rx.isAnimating) >>> bag
+        viewPresenter.showLoader.map(!).bind(to: activityIndicator.rx.isHidden) >>> bag
     }
     
     private func addBindings() {
