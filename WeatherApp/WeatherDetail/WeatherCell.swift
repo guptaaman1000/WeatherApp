@@ -18,9 +18,21 @@ class WeatherCell: UICollectionViewCell {
     
     func setupCell(detail: Weather) {
         
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let date = dateFormatter.date(from: detail.date)
+        
+        let dayFormatter = DateFormatter()
+        dayFormatter.dateFormat = "MMM d"
+        let day = dayFormatter.string(from: date!)
+        
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm"
+        let time = timeFormatter.string(from: date!)
+        
         iconLabel.text = detail.icon
         tempLabel.text = "\(detail.temperature) °C"
-        dateLabel.text = "Monday"
-        timeLabel.text = "3 PM"
+        dateLabel.text = day
+        timeLabel.text = time
     }
 }
