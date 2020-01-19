@@ -14,13 +14,22 @@ import RxCocoa
 class CityListViewController: UIViewController {
     
     @IBOutlet weak var addButton: UIBarButtonItem!
+    @IBOutlet weak var tableView: UITableView!
     
     var viewPresenter: CityListViewPresenter!
     private let bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         addBindings()
+        bindTableView()
+    }
+    
+    private func setupUI() {
+        self.title = "Cities"
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "DefaultCell")
     }
     
     private func addBindings() {
@@ -28,6 +37,23 @@ class CityListViewController: UIViewController {
         addButton.rx.tap.subscribe(onNext: { [weak self] in
             guard let self = self else { return }
             self.viewPresenter.openAddCityView(source: self)
+        }) >>> bag
+    }
+    
+    private func bindTableView() {
+        
+        viewPresenter.dataSource
+            .asObservable()
+            .bind(to: tableView.rx.items(cellIdentifier: "DefaultCell",
+                                         cellType: UITableViewCell.self)) { [unowned self] index, model, cell in
+                                            let city = self.viewPresenter.dataSource.value[index]
+                                            cell.textLabel?.text = city
+            } >>> bag
+        
+        tableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
+            guard let self = self else { return }
+            self.tableView.deselectRow(at: indexPath, animated: true)
+            self.viewPresenter.openWeatherDetailView(source: self, index: indexPath)
         }) >>> bag
     }
 }

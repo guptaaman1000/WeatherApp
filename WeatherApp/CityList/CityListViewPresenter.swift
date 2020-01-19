@@ -8,10 +8,11 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 class CityListViewPresenter {
     
-    var dataSource = [String]()
+    var dataSource = BehaviorRelay<[String]>(value: [])
     
     private let appRouter: AppRouterType
     private let bag = DisposeBag()
@@ -32,11 +33,19 @@ extension CityListViewPresenter {
                 
                 switch $0 {
                 case .success(let city):
-                    self.dataSource.append(city)
+                    var cityList = self.dataSource.value
+                    cityList.append(city)
+                    self.dataSource.accept(cityList)
                 default:
                     break
                 }
                 
             } >>> self.bag
+    }
+    
+    func openWeatherDetailView(source: UIViewController, index: IndexPath) {
+        
+        let city = dataSource.value[index.row]
+        appRouter.displayWeatherDetail(source: source, city: city)
     }
 }

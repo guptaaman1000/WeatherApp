@@ -22,5 +22,9 @@ class AppAssembly: Assembly {
             }
             return CityListViewPresenter(appRouter: appRouter)
         }
+        
+        container.register(WeatherDetailViewPresenter.self) { (resolver, city: String) in
+            return WeatherDetailViewPresenter(city: city)
+        }
     }
 }

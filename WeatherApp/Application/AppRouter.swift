@@ -14,6 +14,7 @@ protocol AppRouterType {
     
     func entryPoint() -> UINavigationController
     func displayCityAlert(source: UIViewController) -> Maybe<String>
+    func displayWeatherDetail(source: UIViewController, city: String)
     func dismiss(source: UIViewController)
 }
 
@@ -64,6 +65,13 @@ class AppRouter: AppRouterType {
                 source.dismiss(animated: true, completion: nil)
             }
         }
+    }
+    
+    func displayWeatherDetail(source: UIViewController, city: String) {
+        
+        let ctr = storyboard.instantiateViewController(withIdentifier: WeatherDetailViewController.name)  as! WeatherDetailViewController
+        ctr.viewPresenter = resolver.resolve(WeatherDetailViewPresenter.self, argument: city)
+        source.navigationController?.pushViewController(ctr, animated: true)
     }
     
     func dismiss(source: UIViewController) {

@@ -33,7 +33,19 @@
                     <view key="view" contentMode="scaleToFill" id="6if-KQ-6cM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4iK-4A-GsS">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4iK-4A-GsS" firstAttribute="leading" secondItem="t14-aQ-kVP" secondAttribute="leading" id="OAC-ed-Bgr"/>
+                            <constraint firstItem="t14-aQ-kVP" firstAttribute="trailing" secondItem="4iK-4A-GsS" secondAttribute="trailing" id="ibk-Gj-Fhm"/>
+                            <constraint firstItem="4iK-4A-GsS" firstAttribute="top" secondItem="t14-aQ-kVP" secondAttribute="top" id="kvJ-tD-KfF"/>
+                            <constraint firstItem="4iK-4A-GsS" firstAttribute="bottom" secondItem="t14-aQ-kVP" secondAttribute="bottom" id="mf9-k6-Hsv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="t14-aQ-kVP"/>
                     </view>
                     <navigationItem key="navigationItem" id="V87-Ws-FIt">
@@ -41,11 +53,27 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="cii-5k-QZM" id="e2S-7g-yJa"/>
+                        <outlet property="tableView" destination="4iK-4A-GsS" id="1PR-pD-gnu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jyl-NS-pfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="468" y="-119"/>
+            <point key="canvasLocation" x="466.66666666666669" y="-119.19642857142857"/>
+        </scene>
+        <!--Weather Detail View Controller-->
+        <scene sceneID="ZO6-jv-Weh">
+            <objects>
+                <viewController storyboardIdentifier="WeatherDetailViewController" id="7a5-Tu-yVm" customClass="WeatherDetailViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n41-C7-zfe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Znz-Oe-Lvt"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Sd-SY-4C2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1488" y="-119"/>
         </scene>
     </scenes>
 </document>

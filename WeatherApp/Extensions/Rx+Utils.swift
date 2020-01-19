@@ -11,22 +11,7 @@ import RxSwift
 import RxCocoa
 
 infix operator >>>: AdditionPrecedence
-infix operator <->: AdditionPrecedence
 
 public func >>> (lhs: Disposable?, rhs: DisposeBag) {
     lhs?.disposed(by: rhs)
-}
-
-public func <-> <T> (property:ControlProperty<T>, behaviourRelay: BehaviorRelay<T>) -> Disposable {
-    
-    let bindToUIDisposable = behaviourRelay.asObservable().bind(to: property)
-    
-    let bindToVariable = property
-        .subscribe(onNext: { n in
-            behaviourRelay.accept(n)
-        }, onCompleted: {
-            bindToUIDisposable.dispose()
-        })
-    
-    return Disposables.create(bindToUIDisposable, bindToVariable)
 }

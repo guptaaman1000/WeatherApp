@@ -7,3 +7,26 @@
 //
 
 import Foundation
+import UIKit
+import RxSwift
+import RxCocoa
+
+class WeatherDetailViewController: UIViewController {
+        
+    var viewPresenter: WeatherDetailViewPresenter!
+    private let bag = DisposeBag()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+        addBindings()
+    }
+    
+    private func setupUI() {
+        self.title = viewPresenter.city
+    }
+    
+    private func addBindings() {
+        
+    }
+}
