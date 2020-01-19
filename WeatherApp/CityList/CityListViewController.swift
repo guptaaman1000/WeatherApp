@@ -24,6 +24,7 @@ class CityListViewController: UIViewController {
         setupUI()
         addBindings()
         bindTableView()
+        viewPresenter.fetchCurrentLocation()
     }
     
     private func setupUI() {

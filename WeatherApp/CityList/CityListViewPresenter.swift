@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import CoreLocation
 
 class CityListViewPresenter {
     
@@ -16,9 +17,36 @@ class CityListViewPresenter {
     
     private let appRouter: AppRouterType
     private let bag = DisposeBag()
+    private let locationManager = CLLocationManager()
     
     init(appRouter: AppRouterType) {
         self.appRouter = appRouter
+    }
+}
+
+extension CityListViewPresenter {
+    
+    func setupBindings() {
+        
+        locationManager.rx.didUpdateLocations
+            .map { locations in locations[0] }
+            .filter { location in
+                return location.horizontalAccuracy < kCLLocationAccuracyHundredMeters
+            }.take(1).subscribe(onNext: { [weak self] location in
+                guard let self = self else { return }
+                CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
+                    guard let placemark = placemarks?.first,
+                        let city = placemark.locality else { return }
+                    var cityList = self.dataSource.value
+                    cityList.append(city)
+                    self.dataSource.accept(cityList)
+                }
+            }) >>> bag
+    }
+    
+    func fetchCurrentLocation() {
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
 }
 
