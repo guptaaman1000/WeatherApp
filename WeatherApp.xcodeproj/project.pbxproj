@@ -24,6 +24,7 @@
 		1418E90823D4C8E100255C9D /* WeatherInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1418E90723D4C8E100255C9D /* WeatherInteractor.swift */; };
 		1418E90A23D4DC4300255C9D /* weather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1418E90923D4DC4300255C9D /* weather.ttf */; };
 		1418E90C23D4EBB700255C9D /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1418E90B23D4EBB700255C9D /* WeatherCell.swift */; };
+		1418E90E23D5050B00255C9D /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1418E90D23D5050B00255C9D /* CLLocationManager+Rx.swift */; };
 		14A31A3223D44AE600052971 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A31A3123D44AE600052971 /* AppDelegate.swift */; };
 		14A31A3723D44AE600052971 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A31A3523D44AE600052971 /* Main.storyboard */; };
 		14A31A3923D44AE700052971 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14A31A3823D44AE700052971 /* Assets.xcassets */; };
@@ -65,6 +66,7 @@
 		1418E90723D4C8E100255C9D /* WeatherInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInteractor.swift; sourceTree = "<group>"; };
 		1418E90923D4DC4300255C9D /* weather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = weather.ttf; sourceTree = "<group>"; };
 		1418E90B23D4EBB700255C9D /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
+		1418E90D23D5050B00255C9D /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
 		14A31A2E23D44AE600052971 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A31A3123D44AE600052971 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14A31A3623D44AE600052971 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				1418E8F123D47BBE00255C9D /* Rx+Utils.swift */,
 				1418E8F323D4A4DB00255C9D /* NSObject+Utils.swift */,
 				1418E90523D4BE5800255C9D /* URLSession+Status.swift */,
+				1418E90D23D5050B00255C9D /* CLLocationManager+Rx.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				1418E8FB23D4ABEE00255C9D /* WeatherResponse.swift in Sources */,
 				1418E8EA23D4758600255C9D /* WeatherDetailViewController.swift in Sources */,
 				14A31A6023D450EC00052971 /* AppRouter.swift in Sources */,
+				1418E90E23D5050B00255C9D /* CLLocationManager+Rx.swift in Sources */,
 				1418E90323D4AF6300255C9D /* RESTNetworkClient.swift in Sources */,
 				1418E90623D4BE5800255C9D /* URLSession+Status.swift in Sources */,
 				1418E8F223D47BBE00255C9D /* Rx+Utils.swift in Sources */,
