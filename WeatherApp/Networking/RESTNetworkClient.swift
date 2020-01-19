@@ -17,7 +17,7 @@ final public class RESTNetworkClient: NetworkClientType {
         self.session = session
     }
     
-    public func request<Response: Codable>(_ request: Request) -> Single<Response> {
+    public func request<Response: Decodable>(_ request: Request) -> Single<Response> {
         
         let urlRequest: URLRequest
         
@@ -67,6 +67,7 @@ final public class RESTNetworkClient: NetworkClientType {
                 }
             })
             
+            request.resume()
             return Disposables.create { request.cancel() }
         }
     }

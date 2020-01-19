@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct WeatherResponse: Decodable {
+public struct WeatherResponse: Decodable {
     
     let city: City
     let weatherList: [Weather]
@@ -18,7 +18,7 @@ struct WeatherResponse: Decodable {
         case city
     }
     
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         
         let values = try decoder.container(keyedBy: CodingKeys.self)
         city = try values.decode(City.self, forKey: .city)

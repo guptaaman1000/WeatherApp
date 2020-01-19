@@ -24,7 +24,19 @@ class AppAssembly: Assembly {
         }
         
         container.register(WeatherDetailViewPresenter.self) { (resolver, city: String) in
-            return WeatherDetailViewPresenter(city: city)
+            guard let weatherInteractor = resolver.resolve(WeatherInteractorType.self) else {
+                fatalError("Could not resolve Weather interactor")
+            }
+            return WeatherDetailViewPresenter(weatherInteractor: weatherInteractor, city: city)
+        }
+        
+        container.register(NetworkClientType.self) { _ in
+            RESTNetworkClient()
+        }
+        
+        container.register(WeatherInteractorType.self) { resolver in
+            guard let networkType = resolver.resolve(NetworkClientType.self) else { fatalError("Could not resolve Network client") }
+            return WeatherInteractor(network: networkType)
         }
     }
 }

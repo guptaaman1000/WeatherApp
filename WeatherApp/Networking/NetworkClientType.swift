@@ -10,5 +10,5 @@ import RxSwift
 
 //sourcery: AutoMockable
 public protocol NetworkClientType {
-    func request<Response: Codable>(_ request: Request) -> Single<Response>
+    func request<Response: Decodable>(_ request: Request) -> Single<Response>
 }

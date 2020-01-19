@@ -21,6 +21,7 @@
 		1418E90323D4AF6300255C9D /* RESTNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1418E8FF23D4AF6300255C9D /* RESTNetworkClient.swift */; };
 		1418E90423D4AF6300255C9D /* NetworkEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1418E90023D4AF6300255C9D /* NetworkEnums.swift */; };
 		1418E90623D4BE5800255C9D /* URLSession+Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1418E90523D4BE5800255C9D /* URLSession+Status.swift */; };
+		1418E90823D4C8E100255C9D /* WeatherInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1418E90723D4C8E100255C9D /* WeatherInteractor.swift */; };
 		14A31A3223D44AE600052971 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A31A3123D44AE600052971 /* AppDelegate.swift */; };
 		14A31A3723D44AE600052971 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A31A3523D44AE600052971 /* Main.storyboard */; };
 		14A31A3923D44AE700052971 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14A31A3823D44AE700052971 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		1418E8FF23D4AF6300255C9D /* RESTNetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTNetworkClient.swift; sourceTree = "<group>"; };
 		1418E90023D4AF6300255C9D /* NetworkEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkEnums.swift; sourceTree = "<group>"; };
 		1418E90523D4BE5800255C9D /* URLSession+Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Status.swift"; sourceTree = "<group>"; };
+		1418E90723D4C8E100255C9D /* WeatherInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInteractor.swift; sourceTree = "<group>"; };
 		14A31A2E23D44AE600052971 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A31A3123D44AE600052971 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14A31A3623D44AE600052971 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				1418E90023D4AF6300255C9D /* NetworkEnums.swift */,
 				1418E8FD23D4AF6300255C9D /* NetworkClientType.swift */,
 				1418E8FF23D4AF6300255C9D /* RESTNetworkClient.swift */,
+				1418E90723D4C8E100255C9D /* WeatherInteractor.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				1418E8F423D4A4DB00255C9D /* NSObject+Utils.swift in Sources */,
 				1418E90123D4AF6300255C9D /* NetworkClientType.swift in Sources */,
 				1418E90423D4AF6300255C9D /* NetworkEnums.swift in Sources */,
+				1418E90823D4C8E100255C9D /* WeatherInteractor.swift in Sources */,
 				14A31A3223D44AE600052971 /* AppDelegate.swift in Sources */,
 				1418E8E723D4756500255C9D /* CityListViewController.swift in Sources */,
 			);

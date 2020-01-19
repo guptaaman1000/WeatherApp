@@ -20,6 +20,7 @@ class WeatherDetailViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         addBindings()
+        viewPresenter.fetchWeather()
     }
     
     private func setupUI() {
