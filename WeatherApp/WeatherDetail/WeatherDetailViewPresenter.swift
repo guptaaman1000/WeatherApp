@@ -12,7 +12,7 @@ import RxCocoa
 
 class WeatherDetailViewPresenter {
     
-    var dataSource = PublishSubject<WeatherResponse>()
+    var dataSource = BehaviorRelay<WeatherResponse?>(value: nil)
     let city: String
     let showLoader = BehaviorRelay<Bool>(value: false)
     
@@ -29,14 +29,13 @@ class WeatherDetailViewPresenter {
         showLoader.accept(true)
         
         weatherInteractor.getWeatherDetail(for: city)
-            .debug()
             .observeOn(MainScheduler.instance)
             .subscribe { [weak self] (event) in
                 guard let self = self else { return }
                 self.showLoader.accept(false)
                 switch event {
                 case .success(let response):
-                    self.dataSource.onNext(response)
+                    self.dataSource.accept(response)
                 case .error:
                     break
                 }
