@@ -184,7 +184,7 @@
 				1418E8ED23D4779200255C9D /* Extensions */,
 				1418E8E823D4757200255C9D /* WeatherDetail */,
 				1418E8E323D4753000255C9D /* CityList */,
-				14A31A5A23D450CA00052971 /* Application */,
+				14A31A5A23D450CA00052971 /* Router */,
 				14A31A3123D44AE600052971 /* AppDelegate.swift */,
 				14A31A3523D44AE600052971 /* Main.storyboard */,
 				14A31A3823D44AE700052971 /* Assets.xcassets */,
@@ -203,14 +203,14 @@
 			path = WeatherAppTests;
 			sourceTree = "<group>";
 		};
-		14A31A5A23D450CA00052971 /* Application */ = {
+		14A31A5A23D450CA00052971 /* Router */ = {
 			isa = PBXGroup;
 			children = (
 				14A31A5B23D450EC00052971 /* AppAssembly.swift */,
 				14A31A5C23D450EC00052971 /* Application.swift */,
 				14A31A5D23D450EC00052971 /* AppRouter.swift */,
 			);
-			path = Application;
+			path = Router;
 			sourceTree = "<group>";
 		};
 		7585BCD3E0146C5B7C56C114 /* Pods */ = {
