@@ -1,14 +1,7 @@
 PODS:
-  - Differentiator (4.0.1)
-  - RxBlocking (5.0.1):
-    - RxSwift (~> 5)
   - RxCocoa (5.0.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
-  - RxDataSources (4.0.1):
-    - Differentiator (~> 4.0)
-    - RxCocoa (~> 5.0)
-    - RxSwift (~> 5.0)
   - RxRelay (5.0.1):
     - RxSwift (~> 5)
   - RxSwift (5.0.1)
@@ -20,51 +13,28 @@ PODS:
   - RxSwiftExt/RxCocoa (5.2.0):
     - RxCocoa (~> 5.0)
     - RxSwiftExt/Core
-  - RxTest (5.0.1):
-    - RxSwift (~> 5)
-  - Sourcery (0.17.0)
-  - SwiftyMocky (3.5.0):
-    - SwiftyMocky/Core (= 3.5.0)
-  - SwiftyMocky/Core (3.5.0):
-    - Sourcery (>= 0.17)
   - Swinject (2.7.1)
 
 DEPENDENCIES:
-  - RxBlocking
-  - RxDataSources
   - RxSwift
   - RxSwiftExt
-  - RxTest
-  - SwiftyMocky
   - Swinject
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - Differentiator
-    - RxBlocking
     - RxCocoa
-    - RxDataSources
     - RxRelay
     - RxSwift
     - RxSwiftExt
-    - RxTest
-    - Sourcery
-    - SwiftyMocky
     - Swinject
 
 SPEC CHECKSUMS:
-  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
-  RxBlocking: c5e090f42d046df8b0e7752742510f349963710f
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
-  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   RxSwiftExt: 4ca80336f43c28f11a2825cdd2fc61dd6c044697
-  RxTest: 0132f952a61da82d5233abedaa559df91e5330e5
-  Sourcery: 3ed61be7c8a1218fce349266139379dba477efe0
-  SwiftyMocky: f277174040db328a9da04ce8efa81b6d6d5b9d7d
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
 
-PODFILE CHECKSUM: 4b2b9a8eb1b6c7aa5f101a93e9ff4aa601714510
+PODFILE CHECKSUM: fce273248c3196b959bffcc74ea1e66872b4f8a4
 
 COCOAPODS: 1.8.4

@@ -24,14 +24,12 @@ def test_pods
 end
 
 target 'WeatherApp' do
-
-  pod 'RxDataSources'
   
   injector
   react
 
   target 'WeatherAppTests' do
     inherit! :search_paths
-    test_pods
+    #test_pods
   end
 end

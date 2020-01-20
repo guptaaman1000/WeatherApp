@@ -21,12 +21,13 @@ class CityListViewPresenter {
     
     init(appRouter: AppRouterType) {
         self.appRouter = appRouter
+        setupBindings()
     }
 }
 
 extension CityListViewPresenter {
     
-    func setupBindings() {
+    private func setupBindings() {
         
         locationManager.rx.didUpdateLocations
             .map { locations in locations[0] }
