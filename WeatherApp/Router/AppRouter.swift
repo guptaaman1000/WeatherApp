@@ -25,7 +25,7 @@ class AppRouter: AppRouterType {
     init(resolver: Resolver) {
         
         self.resolver = resolver
-        self.storyboard = UIStoryboard(name: "Main", bundle: nil)
+        self.storyboard = UIStoryboard(name: Constants.mainStoryboard, bundle: nil)
     }
     
     func entryPoint() -> UINavigationController {
@@ -40,18 +40,18 @@ class AppRouter: AppRouterType {
         
         return Maybe.create { mayBe in
             
-            let alertVC = UIAlertController(title: "Enter city name", message: nil, preferredStyle: .alert)
+            let alertVC = UIAlertController(title: enterCity, message: nil, preferredStyle: .alert)
             
             alertVC.addTextField(configurationHandler: {(textField : UITextField!) -> Void in
-                textField.placeholder = "City Name"
+                textField.placeholder = cityPlaceholder
             })
             
-            alertVC.addAction(UIAlertAction(title: "Cancel", style: .default, handler: {_ in
+            alertVC.addAction(UIAlertAction(title: cancel, style: .default, handler: {_ in
                 mayBe(.completed)
                 source.dismiss(animated: true, completion: nil)
             }))
             
-            alertVC.addAction(UIAlertAction(title: "Save", style: .default, handler: { _ in
+            alertVC.addAction(UIAlertAction(title: save, style: .default, handler: { _ in
                     let textField = alertVC.textFields![0] as UITextField
                     mayBe(.success(textField.text!))
                     source.dismiss(animated: true, completion: nil)

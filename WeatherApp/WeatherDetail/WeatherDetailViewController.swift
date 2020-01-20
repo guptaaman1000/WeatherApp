@@ -36,9 +36,9 @@ class WeatherDetailViewController: UIViewController {
     
     private func setupUI() {
         self.title = viewPresenter.city
-        pressureTitleLabel.text = "Pressure"
-        humidityTitleLabel.text = "Humidity"
-        windTitleLabel.text = "Wind"
+        pressureTitleLabel.text = pressure
+        humidityTitleLabel.text = humidity
+        windTitleLabel.text = wind
         viewPresenter.showLoader.bind(to: activityIndicator.rx.isAnimating) >>> bag
         viewPresenter.showLoader.map(!).bind(to: activityIndicator.rx.isHidden) >>> bag
     }
@@ -50,10 +50,10 @@ class WeatherDetailViewController: UIViewController {
                 let response = response,
                 let first = response.weatherList.first else { return }
             self.iconLabel.text = first.icon
-            self.tempLabel.text = "\(first.temperature) °C"
-            self.pressureValueLabel.text = "\(first.pressure) hPa"
-            self.humidityValueLabel.text = "\(first.humidity)%"
-            self.windValueLabel.text = "\(first.windSpeed) m/s"
+            self.tempLabel.text = "\(first.temperature) \(celsius)"
+            self.pressureValueLabel.text = "\(first.pressure) \(pressureUnit)"
+            self.humidityValueLabel.text = "\(first.humidity)\(Constants.percent)"
+            self.windValueLabel.text = "\(first.windSpeed) \(windUnit)"
             self.collectionView.reloadData()
         }) >>> bag
     }

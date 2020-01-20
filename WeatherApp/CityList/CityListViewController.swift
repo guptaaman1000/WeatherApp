@@ -28,9 +28,9 @@ class CityListViewController: UIViewController {
     }
     
     private func setupUI() {
-        self.title = "Cities"
+        self.title = cities
         tableView.tableFooterView = UIView(frame: CGRect.zero)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "DefaultCell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.defaultCellIdentifier)
     }
     
     private func addBindings() {
@@ -45,7 +45,7 @@ class CityListViewController: UIViewController {
         
         viewPresenter.dataSource
             .asObservable()
-            .bind(to: tableView.rx.items(cellIdentifier: "DefaultCell",
+            .bind(to: tableView.rx.items(cellIdentifier: Constants.defaultCellIdentifier,
                                          cellType: UITableViewCell.self)) { [unowned self] index, model, cell in
                                             let city = self.viewPresenter.dataSource.value[index]
                                             cell.textLabel?.text = city

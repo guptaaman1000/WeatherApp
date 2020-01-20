@@ -1,0 +1,19 @@
+//
+//  Localizable.strings
+//  GOJekContacts
+//
+//  Created by Aman Gupta on 26/10/19.
+//  Copyright © 2019 Aman Gupta. All rights reserved.
+//
+
+"Pressure" = "Pressure";
+"Humidity" = "Humidity";
+"Wind" = "Wind";
+"Celsius" = "°C";
+"PressureUnit" = "hPa";
+"WindUnit" = "m/s";
+"Cities" = "Cities";
+"Enter city name" = "Enter city name";
+"City Name" = "City Name";
+"Cancel" = "Cancel";
+"Save" = "Save";
