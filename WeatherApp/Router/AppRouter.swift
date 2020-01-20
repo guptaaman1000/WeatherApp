@@ -9,7 +9,6 @@ import Swinject
 import Foundation
 import RxSwift
 
-// sourcery: AutoMockable
 protocol AppRouterType {
     
     func entryPoint() -> UINavigationController
@@ -52,8 +51,7 @@ class AppRouter: AppRouterType {
                 source.dismiss(animated: true, completion: nil)
             }))
             
-            alertVC.addAction(UIAlertAction(title: "Save", style: .default, handler:
-                { _ in
+            alertVC.addAction(UIAlertAction(title: "Save", style: .default, handler: { _ in
                     let textField = alertVC.textFields![0] as UITextField
                     mayBe(.success(textField.text!))
                     source.dismiss(animated: true, completion: nil)

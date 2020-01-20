@@ -9,7 +9,6 @@
 import Foundation
 import RxSwift
 
-//sourcery: AutoMockable
 public protocol NetworkClientType {
     func request<Response: Decodable>(_ request: Request) -> Single<Response>
 }

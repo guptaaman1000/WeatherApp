@@ -9,7 +9,6 @@
 import Foundation
 import RxSwift
 
-//sourcery: AutoMockable
 public protocol WeatherInteractorType: class {
     
     func getWeatherDetail(for city: String) -> Single<WeatherResponse>
