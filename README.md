@@ -21,3 +21,12 @@ This project is build using Swift 5.
 
  ## 7. Supports
  - Localization
+ 
+ ## 8. Installation Guide
+ - Download code from Github.
+ - Open Terminal and move to root folder of repository.
+ - Run "pod install" command.
+ - Open "WeatherApp.xcworkspace" in Xcode and build it.
+ - In some versions of MacOS, you may encounter following error:
+   "swiftLint cannot be opened because the developer cannot be verified".
+ - To resolve it, Open "Security & Privacy" of Mac and click on "Allow Anyway" to unblock the swiftLint.
